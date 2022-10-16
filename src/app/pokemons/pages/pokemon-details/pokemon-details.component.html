@@ -1,0 +1,41 @@
+<h2>Details for {{ pokemonDetails?.name | titlecase }}</h2>
+<div *ngIf="pokemonDetails" class="main">
+  <div class="details">
+    <label>Id:</label>
+    {{ pokemonDetails?.id }}
+    <br> <br>
+    <label>
+      Name:
+    </label>
+    {{ pokemonDetails?.name | titlecase }}
+    <br> <br>
+    <label>
+      Abilities:
+    </label>
+    <ul *ngFor="let ability of pokemonDetails?.abilities">
+      <li>{{ ability.ability.name | titlecase }}</li>
+    </ul>
+    <br>
+    <label>
+      Forms:
+    </label>
+    <ul *ngFor="let forms of pokemonDetails?.forms">
+      <li>{{ forms.name | titlecase }}</li>
+    </ul>
+    <br>
+    <label>
+      Moves:
+    </label>
+    <ul *ngFor="let move of pokemonDetails?.moves">
+      <li>{{ move.move.name | titlecase }}</li>
+    </ul>
+    <br>
+    <label>
+      Types:
+    </label>
+    <ul *ngFor="let type of pokemonDetails?.types">
+      <li>{{ type.type.name | titlecase }}</li>
+    </ul>
+  </div>
+  <app-image-pokemon [pokemonImage]='pokemonImage'></app-image-pokemon>
+</div>

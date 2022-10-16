@@ -1,0 +1,22 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <a routerLink="/home">
+      <h2>Pokemons list</h2>
+    </a>
+    <ul *ngIf="pokemons">
+      <li *ngFor="let pokemon of pokemons">
+        <a routerLink="/home/{{pokemon.name}}">{{ pokemon.name | titlecase}} </a>
+      </li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div *ngIf="isHome">
+      <h2>Pokemon detail</h2>
+      <p>Click on pokemon item from list to get details</p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png"
+        alt="">
+    </div>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

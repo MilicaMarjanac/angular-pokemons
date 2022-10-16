@@ -1,0 +1,18 @@
+.main{
+  display: flex;
+}
+
+h2{
+  padding-bottom: 30px;
+}
+
+.details{
+  padding-right: 50px;
+}
+
+label{
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+
